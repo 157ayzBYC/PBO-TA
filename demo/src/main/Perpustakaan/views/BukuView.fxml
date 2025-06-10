@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="src.main.Perpustakaan.controllers.BukuController" spacing="20"
+      style="-fx-padding: 20;">
+    <Text text="Manajemen Buku" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Kode Buku:"/>
+        <TextField fx:id="txtKodeBuku" promptText="Kode Buku"/>
+        <Label text="Judul:"/>
+        <TextField fx:id="txtJudul" promptText="Judul Buku"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Pengarang:"/>
+        <TextField fx:id="txtPengarang" promptText="Pengarang"/>
+        <Label text="Tahun Terbit:"/>
+        <TextField fx:id="txtTahunTerbit" promptText="Tahun Terbit"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Button fx:id="btnTambah" text="Tambah" onAction="#handleTambah"/>
+        <Button fx:id="btnUpdate" text="Update" onAction="#handleUpdate"/>
+        <Button fx:id="btnHapus" text="Hapus" onAction="#handleHapus"/>
+        <Button fx:id="btnClear" text="Clear" onAction="#handleClear"/>
+    </HBox>
+
+    <TableView fx:id="tabelBuku">
+        <columns>
+            <TableColumn text="Kode Buku" prefWidth="100" fx:id="colKode"/>
+            <TableColumn text="Judul" prefWidth="200" fx:id="colJudul"/>
+            <TableColumn text="Pengarang" prefWidth="150" fx:id="colPengarang"/>
+            <TableColumn text="Tahun Terbit" prefWidth="100" fx:id="colTahun"/>
+            <TableColumn text="Tersedia" prefWidth="80" fx:id="colTersedia"/>
+        </columns>
+    </TableView>
+</VBox>
